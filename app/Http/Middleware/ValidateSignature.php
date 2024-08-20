@@ -17,6 +17,6 @@ class ValidateSignature extends Middleware
         // 'utm_content',
         // 'utm_medium',
         // 'utm_source',
-        // 'utm_term',
+        // 'utm_term',s
     ];
 }

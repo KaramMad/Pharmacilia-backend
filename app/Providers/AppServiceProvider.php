@@ -32,7 +32,8 @@ class AppServiceProvider extends ServiceProvider
      *
      * returns a typical api response
      */
-    public static function apiResponse(string $message = "success", $data = null, string $dataKey = 'data', bool $status = true, int $error = 200): JsonResponse
+    public static function apiResponse(string $message = "success", $data = null, string $dataKey = 'data', bool $status = true
+    , int $error = 200): JsonResponse
     {
         return response()->json([
             'status' => $status,

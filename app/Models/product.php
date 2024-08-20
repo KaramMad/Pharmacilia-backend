@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class product extends Model
@@ -14,15 +16,16 @@ class product extends Model
     protected $guarded = ['id'];
     protected $hidden = ['pivot'];
 
-    public function orders()
+    public function orders():BelongsToMany
     {
         return $this->belongsToMany(Order::class)->withPivot('quantity');
     }
-    public function category(){
+    public function category():BelongsTo
+    {
         return $this->belongsTo(Category::class);
     }
 
-    public function favoritedBy()
+    public function favoritedBy():BelongsToMany
     {
         return $this->belongsToMany(User::class, 'product_user')->withTimestamps();
     }

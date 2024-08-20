@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Bill extends Model
 {
@@ -14,7 +15,7 @@ class Bill extends Model
     protected $hidden = ['pivot'];
 
 
-    public function order()
+    public function order():BelongsTo
     {
         return $this->belongsTo(Order::class);
     }

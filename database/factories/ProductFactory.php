@@ -27,7 +27,7 @@ class ProductFactory extends Factory
             'scientific_name_ar' => $faker->sentence(2),
             'brand_name' => $faker->sentence(2),
             'brand_name_ar' => $faker->sentence(2),
-            'category_id' => rand(1,7),
+            'category_id' => rand(1,7),   
             'manufacturer' => $faker->company(),
             'manufacturer_ar' => $faker_ar->company(),
             'stock' => $faker->numberBetween(1, 1000),
